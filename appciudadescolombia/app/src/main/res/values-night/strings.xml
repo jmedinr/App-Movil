@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ciudades Colombia</string>
+    <string name="barranquilla_text">"La belleza arquitectónica, el ambiente festivo y los bellos paisajes naturales, hacen de Barranquilla un destino ideal para conocer su riqueza cultural. Es una de las ciudades más importantes del Caribe colombiano, gracias a que su excelente ubicación geográfica, la hace un puerto de gran importancia a nivel marítimo, fluvial y aéreo. Debido a esto, se destaca por ser un centro industrial, comercial y cultural en Colombia.  Capital del departamento del Atlántico, se encuentra ubicada entre la ribera del río Magdalena y la desembocadura del mar Caribe.  Las temperaturas máximas de la ciudad superan siempre los 31.0 grados centígrados, mientras las mínimas están por encima de los 23.3 grados centígrados hasta los 24.8 grados centígrados.  Los sitios que recomendados para visitar son: Gran Malecón Del Río, La Ventana al Mundo, Playas Puerto Colombia, Museo del Caribe, Antiguo Edificio de la Aduana, Catedral Metropolitana María Reina, Zoológico de Barranquilla, Paseo Bolívar, Estadio Metropolitano de Barranquilla y Estadio Édgar Rentería.   La población en Barranquilla es de 1.206.000 habitantes. "</string>
+    <string name="city1">Barranquilla</string>
+    <string name="grid">Grid</string>
+</resources>

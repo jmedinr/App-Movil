@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lista de Ciudades</string>
+
+    <string name="city1">Barranquilla</string>
+    <string name="city2">Medellin</string>
+    <string name="city3">Bogotá</string>
+    <string name="city4">Rioacha</string>
+    <string name="city5">Cartagena</string>
+
+</resources>
