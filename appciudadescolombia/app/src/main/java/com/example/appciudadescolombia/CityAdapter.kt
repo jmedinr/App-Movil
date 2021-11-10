@@ -7,15 +7,23 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
+import android.os.Bundle
+import android.support.v4.app.DialogFragment
 
 class CityAdapter(private val context: Context, private val dataSet: List<CityInformation>) :
+
     RecyclerView.Adapter<CityAdapter.CityViewHolder>() {
     class CityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cityImage: ImageView = itemView.findViewById(R.id.iv_city)
-        val cityName: TextView = itemView.findViewById(R.id.tv_cityName)
+        val cityName: Button = itemView.findViewById(R.id.tv_cityName)
         val location: ImageView = itemView.findViewById(R.id.iv_location)
     }
 
@@ -38,8 +46,9 @@ class CityAdapter(private val context: Context, private val dataSet: List<CityIn
         holder.location.setOnClickListener {
             searchLocation()
         }
+
         holder.cityName.setOnClickListener {
-            Toast.makeText(context, cities, Toast.LENGTH_SHORT).show()
+            CityDialog().onCreateDialog()
         }
 
     }
