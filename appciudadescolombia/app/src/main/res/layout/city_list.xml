@@ -20,14 +20,14 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/barranquilla" />
 
-    <Button
+    <TextView
         android:id="@+id/tv_cityName"
         android:layout_width="167dp"
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="191dp"
         android:textColor="#212121"
-        android:textSize="12sp"
+        android:textSize="20sp"
         tools:text="Barranquilla" />
 
     <ImageView

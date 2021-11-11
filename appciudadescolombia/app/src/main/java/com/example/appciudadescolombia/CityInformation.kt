@@ -4,4 +4,4 @@ import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 
 
-data class CityInformation(@StringRes val cityNameResourceId: Int, @DrawableRes val cityImageResourceId: Int)
+data class CityInformation(@StringRes val cityNameResourceId: Int, @DrawableRes val cityImageResourceId: Int,@StringRes val cityDescriptionId: Int)

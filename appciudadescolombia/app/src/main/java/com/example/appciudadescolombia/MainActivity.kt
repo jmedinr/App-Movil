@@ -8,11 +8,12 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v4.content.ContextCompat
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
+
 
 
 class MainActivity : AppCompatActivity() {
     private var isLinearLayoutManager = true
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -70,5 +71,4 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = CityAdapter(this, DataResource().loadCities())
     }
-
 }
