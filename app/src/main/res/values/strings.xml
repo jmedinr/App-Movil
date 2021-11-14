@@ -9,16 +9,17 @@
 Hasta el año 2018 su población era de 2.427.129 habitantes.
 
     </string>
-    <string name="sitioseventosmed">Eventos de importancia
+    <string name="sitioseventosmed"><b>Eventos de importancia</b>
 
-Anualmente se ofrece a los visitantes la feria de las flores, con aproximadamente 140 eventos culturales, y la feria de moda Colombiamoda.
+<br>Anualmente se ofrece a los visitantes la feria de las flores,
+    con aproximadamente 140 eventos culturales, y la feria de moda Colombiamoda.</br>
 
-Sitios de interés
-Plaza Botero
-Pueblito paisa
-Escaleras eléctricas de la comuna 13
-Parque El poblado
-Plaza Mayor
+        <br><br><b>Sitios de interés</b></br></br>
+<br>Plaza Botero</br>
+<br>Pueblito paisa</br>
+<br>Escaleras eléctricas de la comuna 13</br>
+<br>Parque El poblado</br>
+<br>Plaza Mayor</br>
 Catedral Basílica Metropolitana de Medellin
 </string>
     <string name="ciudad">MEDELLIN</string>>
