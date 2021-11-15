@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">POI</string>
+    <string name="datosgeneralesmed">Capital del departamento de Antioquia. Es la segunda ciudad en importancia en Colombia. La temperatura promedio es de 24°C y está a 1479 mts sobre el nivel mar.
+
+        Está situada en el Valle de Aburrá y es atravesada de sur a norte por el rio Medellin.
+        Limita al norte por los municipios de Bello, Copacabana y San Jerónimo;
+        por el sur con Envigado, La estrella y El retiro; por el Oriente con Guarne y Rionegro
+        y por el occidente con Angelópolis, Ebéjico y Heliconia.
+Hasta el año 2018 su población era de 2.427.129 habitantes.
+
+    </string>
+    <string name="sitioseventosmed"><b>Eventos de importancia</b>
+
+<br>Anualmente se ofrece a los visitantes la feria de las flores,
+    con aproximadamente 140 eventos culturales, y la feria de moda Colombiamoda.</br>
+
+        <br><br><b>Sitios de interés</b></br></br>
+<br>Plaza Botero</br>
+<br>Pueblito paisa</br>
+<br>Escaleras eléctricas de la comuna 13</br>
+<br>Parque El poblado</br>
+<br>Plaza Mayor</br>
+Catedral Basílica Metropolitana de Medellin
+</string>
+    <string name="ciudad">MEDELLIN</string>>
+</resources>
