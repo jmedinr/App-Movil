@@ -1,0 +1,44 @@
+{
+"POIs":
+[
+  {
+    "name": "Cerro Nutibara",
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Nutibara.jpg",
+    "description": "El Cerro Nutibara es una pequeña formación montañosa ubicada en la ciudad colombiana de Medellín, en el centro geográfico del Valle de Aburrá.",
+    "rate": "8/10"
+  },
+  {
+    "name": "Centro Administrativo La Alpujarra",
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/c/c7/La_Raza-Rodrigo_Arenas_Betancourt.JPG",
+    "description": "Es un conjunto urbanístico de edificaciones desde donde se administran los gobiernos Departamental de Antioquia y Municipal de Medellín.",
+    "rate": "7/10"
+  },
+  {
+    "name": "Museo El Castillo",
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/1/18/El_Castillo-exterior.JPG",
+    "description": "Es un museo de la ciudad colombiana de Medellín, ofrece exposiciones permanentes de objetos en porcelana y cristal, entre otros.",
+    "rate": "7/10"
+  },
+
+  {
+    "name": "Arrieros Mulas y Fondas",
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/e/ee/ArrierosMulasFondasUrrao.JPG",
+    "description": "Arrieros mulas y fondas es uno de los espectáculos más concurridos de la Feria de las flores de la ciudad de Medellín, Colombia.",
+    "rate": "8/10"
+  },
+
+  {
+    "name": "Feria internacional del caballo",
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/0/0e/CabalgataFiestaFloresMedell%C3%ADn.jpg",
+    "description": "Feria internacional del caballo o cabalgata (Medellín). Evento equino y ecuestre que se celebra anualmente en esta ciudad, por tradición de marcada vocación caballista.",
+    "rate": "8/10"
+  },
+
+  {
+    "name": "Parque de Berrío",
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Pedro_Justo_Berrio-Estatua-Medellin.JPG",
+    "description": "Es un parque urbano ubicado en pleno corazón geográfico de la ciudad colombiana de Medellín.",
+    "rate": "8/10"
+  }
+]
+}
