@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                     cityJson.getString("title"),
                     cityJson.getString("description"),
                     cityJson.getString("punctuation"),
-                    cityJson.getString("photoUrl")
+                    cityJson.getString("photoURL")
                 )
                 Log.d(TAG, "generateCities: $city")
                 mCities.add(city)

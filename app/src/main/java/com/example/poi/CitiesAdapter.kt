@@ -18,7 +18,7 @@ class CitiesAdapter(
 ) : RecyclerView.Adapter<CitiesAdapter.CityViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_detail,parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_citylistitem,parent, false)
         return CityViewHolder(view)
     }
 
