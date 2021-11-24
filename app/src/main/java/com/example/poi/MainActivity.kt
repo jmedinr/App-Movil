@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         recycler = findViewById(R.id.lstcities)
         setupRecyclerView()
         generateCities()
+
+
     }
 
     private fun setupRecyclerView(){
