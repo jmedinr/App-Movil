@@ -1,9 +1,12 @@
 package com.example.poi
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Half.toFloat
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.TextView
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONArray
@@ -23,8 +26,27 @@ class MainActivity : AppCompatActivity() {
         recycler = findViewById(R.id.lstcities)
         setupRecyclerView()
         generateCities()
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_poi, menu)
+        return true
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.settings -> {
+                newSetting()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun newSetting() {
+        val intent = Intent(this, SettingsPreferences::class.java)
+        startActivity(intent)
     }
 
     private fun setupRecyclerView(){
@@ -44,6 +66,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun cityOnClick(city: Cities){
         Log.d(TAG, "Click on: $city")
+        city?.let {
+            navigateToDetail(it)
+        }
+    }
+
+    private fun navigateToDetail(city: Cities) {
+        val intent = Intent(this, Detail::class.java).apply {
+            putExtra(KEY_TITLE, city.title)
+            putExtra(KEY_PHOTO, city.photoURL)
+            putExtra(KEY_DESCRIPTION, city.description)
+        }
+
+        startActivity(intent)
     }
 
     private fun generateCities() {
@@ -87,6 +122,9 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName
+        const val KEY_TITLE = "city_extra_title"
+        const val KEY_PHOTO = "city_extra_photo"
+        const val KEY_DESCRIPTION = "city_extra_description"
     }
 }
 
