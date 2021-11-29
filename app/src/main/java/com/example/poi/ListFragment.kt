@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.DividerItemDecoration
 import org.json.JSONArray
@@ -19,6 +20,7 @@ class ListFragment : Fragment() {
     private lateinit var mCities: ArrayList<Cities>
     private lateinit var mAdapter: CitiesAdapter
     private lateinit var recycler: RecyclerView
+    private lateinit var cityDetailFragment: CityDetailFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,6 +66,9 @@ class ListFragment : Fragment() {
 
     private fun navigateToDetail(city: Cities) {
         Log.d(TAG, "Click on: $city")
+
+        findNavController().navigate(R.id.actionFromListToDetail)
+
 //        val intent = Intent {
 //            putExtra(KEY_CITYNAME, city.title)
 //            putExtra(KEY_CITYDESC, city.description)
