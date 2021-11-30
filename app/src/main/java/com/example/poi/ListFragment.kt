@@ -67,16 +67,14 @@ class ListFragment : Fragment() {
     private fun navigateToDetail(city: Cities) {
         Log.d(TAG, "Click on: $city")
 
-        findNavController().navigate(R.id.actionFromListToDetail)
+ //       cityDetailFragment=CityDetailFragment.newInstance(city.title,city.description)
 
-//        val intent = Intent {
-//            putExtra(KEY_CITYNAME, city.title)
-//            putExtra(KEY_CITYDESC, city.description)
-//            putExtra(KEY_CITYPOINTS, city.punctuation)
-//            putExtra(KEY_PHOTOURL, city.photoURL)
-//        }
-//
-//        startActivity(intent)
+        val detailbundle = Bundle()
+        detailbundle.putString("param1",city.title)
+        detailbundle.putString("param2",city.description)
+        detailbundle.putString("param3",city.photoURL)
+
+        findNavController().navigate(R.id.actionFromListToDetail,detailbundle)
     }
 
     private fun generateCities() {
