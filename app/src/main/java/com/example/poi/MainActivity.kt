@@ -14,9 +14,5 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun onClick(view: android.view.View) {
-
-    }
-
 }
 

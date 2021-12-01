@@ -13,10 +13,17 @@
         <action
             android:id="@+id/actionFromListToDetail"
             app:destination="@id/cityDetailFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/cityDetailFragment"
         android:name="com.example.poi.CityDetailFragment"
         android:label="fragment_city_detail"
         tools:layout="@layout/fragment_city_detail" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.poi.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

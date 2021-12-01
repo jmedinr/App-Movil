@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -20,7 +21,6 @@ class ListFragment : Fragment() {
     private lateinit var mCities: ArrayList<Cities>
     private lateinit var mAdapter: CitiesAdapter
     private lateinit var recycler: RecyclerView
-    private lateinit var cityDetailFragment: CityDetailFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +40,14 @@ class ListFragment : Fragment() {
         recycler = view.findViewById(R.id.lstcities)
         setupRecyclerView()
         generateCities()
+
+        val settingButton: Button = view.findViewById(R.id.btnsettings)
+        settingButton.setOnClickListener {
+            findNavController().navigate(R.id.settingsFragment)
+        }
     }
 
-    private fun setupRecyclerView(){
+    private fun setupRecyclerView() {
         mCities = arrayListOf()
         recycler.addItemDecoration(
             DividerItemDecoration(
@@ -57,7 +62,7 @@ class ListFragment : Fragment() {
         recycler.adapter = mAdapter
     }
 
-    private fun cityOnClick(city: Cities){
+    private fun cityOnClick(city: Cities) {
         Log.d(TAG, "Click on: $city")
         city?.let {
             navigateToDetail(it)
@@ -67,14 +72,13 @@ class ListFragment : Fragment() {
     private fun navigateToDetail(city: Cities) {
         Log.d(TAG, "Click on: $city")
 
- //       cityDetailFragment=CityDetailFragment.newInstance(city.title,city.description)
+        val detailbundle = Bundle().apply {
+            putString("param1", city.title)
+            putString("param2", city.description)
+            putString("param3", city.photoURL)
+        }
 
-        val detailbundle = Bundle()
-        detailbundle.putString("param1",city.title)
-        detailbundle.putString("param2",city.description)
-        detailbundle.putString("param3",city.photoURL)
-
-        findNavController().navigate(R.id.actionFromListToDetail,detailbundle)
+        findNavController().navigate(R.id.actionFromListToDetail, detailbundle)
     }
 
     private fun generateCities() {
@@ -102,7 +106,7 @@ class ListFragment : Fragment() {
     private fun readCityJsonFile(): String? {
         var citiesString: String? = null
         try {
-            val inputStream = context?.assets?.open ("cities.json")
+            val inputStream = context?.assets?.open("cities.json")
             val size = inputStream?.available()
             val buffer = size?.let { ByteArray(it) }
             inputStream?.read(buffer)
@@ -118,9 +122,5 @@ class ListFragment : Fragment() {
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName
-        const val KEY_CITYNAME = "city_name"
-        const val KEY_CITYDESC = "city_desc"
-        const val KEY_CITYPOINTS = "city_points"
-        const val KEY_PHOTOURL = "city_photourl"
     }
 }
