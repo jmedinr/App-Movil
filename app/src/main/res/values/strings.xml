@@ -23,6 +23,7 @@ Hasta el año 2018 su población era de 2.427.129 habitantes.
 Catedral Basílica Metropolitana de Medellin
 </string>
     <string name="ciudad">MEDELLIN</string>
+    <string name="menu">Settings</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- Preference Titles -->

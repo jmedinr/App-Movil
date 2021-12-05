@@ -3,10 +3,8 @@ package com.example.poi
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -24,6 +22,7 @@ class ListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -40,11 +39,6 @@ class ListFragment : Fragment() {
         recycler = view.findViewById(R.id.lstcities)
         setupRecyclerView()
         generateCities()
-
-        val settingButton: Button = view.findViewById(R.id.btnsettings)
-        settingButton.setOnClickListener {
-            findNavController().navigate(R.id.settingsFragment)
-        }
     }
 
     private fun setupRecyclerView() {
@@ -118,6 +112,21 @@ class ListFragment : Fragment() {
         }
 
         return citiesString
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menufragment,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.setFragment -> {
+                findNavController().navigate(R.id.settingsFragment)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     companion object {
