@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.view.inputmethod.InputBinding
 import androidx.fragment.app.Fragment
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
@@ -14,11 +15,16 @@ import org.json.JSONException
 import java.io.ByteArrayInputStream
 import java.io.IOException
 import java.util.ArrayList
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
 
 class ListFragment : Fragment() {
     private lateinit var mCities: ArrayList<Cities>
     private lateinit var mAdapter: CitiesAdapter
     private lateinit var recycler: RecyclerView
+    private lateinit var viewModel: CitiesViewModel
+    private lateinit var binding: ListFragmentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +35,10 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list, container, false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_list,container,false)
+        viewModel = ViewModelProvider(this).get(CitiesViewModel::class.java)
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
