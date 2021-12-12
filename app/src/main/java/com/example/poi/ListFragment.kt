@@ -1,30 +1,35 @@
 package com.example.poi
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.view.inputmethod.InputBinding
 import androidx.fragment.app.Fragment
-import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.DividerItemDecoration
 import org.json.JSONArray
 import org.json.JSONException
-import java.io.ByteArrayInputStream
 import java.io.IOException
 import java.util.ArrayList
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
+//import com.example.poi.databinding.FragmentListBinding
+//import android.content.Intent
+//import android.text.Layout
+//import android.view.inputmethod.InputBinding
+//import android.widget.Button
+//import java.io.ByteArrayInputStream
+//import androidx.databinding.DataBindingUtil
+//import androidx.databinding.ViewDataBinding
+//import androidx.fragment.app.ListFragment
+//import androidx.lifecycle.ViewModel
+//import androidx.lifecycle.get
 
 class ListFragment : Fragment() {
     private lateinit var mCities: ArrayList<Cities>
     private lateinit var mAdapter: CitiesAdapter
     private lateinit var recycler: RecyclerView
     private lateinit var viewModel: CitiesViewModel
-    private lateinit var binding: ListFragmentBinding
+    //private lateinit var binding: FragmentListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,10 +40,19 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_list,container,false)
+        // binding = DataBindingUtil.inflate(inflater,R.layout.fragment_list,container,false)
         viewModel = ViewModelProvider(this).get(CitiesViewModel::class.java)
 
-        return binding.root
+        observeLiveData()
+
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_list, container, false)
+    }
+
+    private fun observeLiveData(){
+        viewModel.getCities().observe(viewLifecycleOwner, {
+            Log.d("TAG",it.toString())
+        })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
