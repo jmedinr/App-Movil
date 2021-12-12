@@ -29,7 +29,6 @@ class ListFragment : Fragment() {
     private lateinit var mAdapter: CitiesAdapter
     private lateinit var recycler: RecyclerView
     private lateinit var viewModel: CitiesViewModel
-    //private lateinit var binding: FragmentListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,27 +39,26 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // binding = DataBindingUtil.inflate(inflater,R.layout.fragment_list,container,false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_list, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         viewModel = ViewModelProvider(this).get(CitiesViewModel::class.java)
 
         observeLiveData()
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list, container, false)
+        recycler = view.findViewById(R.id.lstcities)
+        setupRecyclerView()
+        generateCities()
     }
 
     private fun observeLiveData(){
         viewModel.getCities().observe(viewLifecycleOwner, {
             Log.d("TAG",it.toString())
         })
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        recycler = view.findViewById(R.id.lstcities)
-        setupRecyclerView()
-        generateCities()
     }
 
     private fun setupRecyclerView() {
