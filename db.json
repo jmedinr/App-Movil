@@ -1,4 +1,5 @@
-[
+{
+  "citys": [
   {
     "title": "Medellin",
     "description": "Medellín está ubicada en el noroccidente de Colombia sobre la coordillera central con una altitud media de 1495 m.s.n.m. Ubicada en el Valle del Aburrá, está rodeada de montañas y es conocida como la “Ciudad de la eterna primavera” por su clima que, durante todo el año, promedia los 24°C. Algunos de los sitios  recomendados son: Plaza Botero, Parque Explora, Parque de los Pies Descalzos, Parque Arví y el Metro.",
@@ -23,4 +24,8 @@
     "punctuation": "Puntuación: 4.5",
     "photoURL": "https://media.istockphoto.com/photos/sky-over-bogot-picture-id1087343640?k=20&m=1087343640&s=612x612&w=0&h=ETo4gPP1R-TkvxgerNuWi5fF8z4S1hMdTzAcQDlpFuc="
   }
-]
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
