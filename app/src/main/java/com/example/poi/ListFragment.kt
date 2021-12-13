@@ -46,18 +46,20 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        recycler = view.findViewById(R.id.lstcities)
+        setupRecyclerView()
+
         viewModel = ViewModelProvider(this).get(CitiesViewModel::class.java)
 
         observeLiveData()
 
-        recycler = view.findViewById(R.id.lstcities)
-        setupRecyclerView()
         generateCities()
     }
 
     private fun observeLiveData(){
         viewModel.getCities().observe(viewLifecycleOwner, {
-            Log.d("TAG",it.toString())
+            val citiesString = it.toString()
+            Log.d("TAG",citiesString)
         })
     }
 
@@ -102,10 +104,13 @@ class ListFragment : Fragment() {
             for (i in 0 until citiesJson.length()) {
                 val cityJson = citiesJson.getJSONObject(i)
                 val city = Cities(
+//                    cityJson.getInt("id"),
                     cityJson.getString("title"),
                     cityJson.getString("description"),
                     cityJson.getString("punctuation"),
                     cityJson.getString("photoURL")
+//                    cityJson.getString("latitude"),
+//                    cityJson.getString("longitude")
                 )
                 Log.d(TAG, "generateCities: $city")
                 mCities.add(city)
