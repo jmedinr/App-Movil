@@ -1,11 +1,8 @@
-package com.example.poi
+package com.example.poi.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.ImageView
-import android.widget.TextView
-import com.bumptech.glide.Glide
+import com.example.poi.R
 
 class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.example.poi
+package com.example.poi.ui
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -6,13 +6,19 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.example.poi.R
+import com.example.poi.adapter.CitiesAdapter
+import com.example.poi.api.ApiClient
+import com.example.poi.models.Cities
 import org.json.JSONArray
 import org.json.JSONException
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.IOException
-import java.util.ArrayList
 
 class ListFragment : Fragment() {
-    private lateinit var mCities: ArrayList<Cities>
+    private lateinit var mCities: MutableList<Cities>
     private lateinit var mAdapter: CitiesAdapter
     private lateinit var recycler: RecyclerView
 
@@ -34,22 +40,21 @@ class ListFragment : Fragment() {
 
         recycler = view.findViewById(R.id.lstcities)
         setupRecyclerView()
-        generateCities()
     }
 
     private fun setupRecyclerView() {
-        mCities = arrayListOf()
+        mCities = mutableListOf()
+
         recycler.addItemDecoration(
             DividerItemDecoration(
                 recycler.context,
                 DividerItemDecoration.VERTICAL
             )
         )
-        mAdapter = CitiesAdapter(mCities, recycler.context) { city ->
-            cityOnClick(city)
-        }
+        mAdapter = CitiesAdapter(mCities, recycler.context)
 
         recycler.adapter = mAdapter
+            generateCities()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -85,43 +90,24 @@ class ListFragment : Fragment() {
         findNavController().navigate(R.id.actionFromListToDetail, detailbundle)
     }
 
-    private fun generateCities() {
-        val citiesString = readCityJsonFile()
-        try {
-            val citiesJson = JSONArray(citiesString)
-            for (i in 0 until citiesJson.length()) {
-                val cityJson = citiesJson.getJSONObject(i)
-                val city = Cities(
-                    cityJson.getString("title"),
-                    cityJson.getString("description"),
-                    cityJson.getString("punctuation"),
-                    cityJson.getString("photoURL")
-                )
-                Log.d(TAG, "generateCities: $city")
-                mCities.add(city)
+    private fun generateCities(){
+        ApiClient.apiService.getUsers().enqueue(object : Callback<MutableList<Cities>> {
+            override fun onFailure(call: Call<MutableList<Cities>>, t: Throwable) {
+                Log.e("error", t.localizedMessage)
             }
 
-            mAdapter.notifyDataSetChanged()
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
-    }
+            override fun onResponse(
+                call: Call<MutableList<Cities>>,
+                response: Response<MutableList<Cities>>
+            ) {
+                val usersResponse = response.body()
+                mCities.clear()
+                usersResponse?.let { mCities.addAll(it) }
+                mAdapter?.notifyDataSetChanged()
+            }
 
-    private fun readCityJsonFile(): String? {
-        var citiesString: String? = null
-        try {
-            val inputStream = context?.assets?.open("cities.json")
-            val size = inputStream?.available()
-            val buffer = size?.let { ByteArray(it) }
-            inputStream?.read(buffer)
-            inputStream?.close()
+        })
 
-            citiesString = buffer?.let { String(it) }
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-
-        return citiesString
     }
 
     companion object {
