@@ -1,4 +1,4 @@
-package com.example.poi.ui
+package com.example.poi
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
