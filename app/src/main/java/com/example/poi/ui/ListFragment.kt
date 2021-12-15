@@ -51,7 +51,9 @@ class ListFragment : Fragment() {
                 DividerItemDecoration.VERTICAL
             )
         )
-        mAdapter = CitiesAdapter(mCities, recycler.context)
+        mAdapter = CitiesAdapter(mCities, recycler.context)  { city ->
+            cityOnClick(city)
+        }
 
         recycler.adapter = mAdapter
             generateCities()

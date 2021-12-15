@@ -12,10 +12,9 @@ import com.example.poi.R
 import com.example.poi.models.Cities
 
 class CitiesAdapter(
-    private val mCities: MutableList<Cities>, private val context: Context
+    private val mCities: MutableList<Cities>, private val context: Context,  private val onClick: (Cities) -> Unit
 ) : RecyclerView.Adapter<CitiesAdapter.CityViewHolder>() {
 
-    private  lateinit var  onClick: (Cities) -> Unit
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_citylistitem,parent, false)
