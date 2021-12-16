@@ -12,7 +12,6 @@ import com.example.poi.R
 import com.example.poi.adapter.CitiesAdapter
 import com.example.poi.api.ApiClient
 import com.example.poi.models.Cities
-import com.example.poi.viewmodel.ViewModel
 import org.json.JSONArray
 import org.json.JSONException
 import retrofit2.Call
@@ -26,8 +25,6 @@ class ListFragment : Fragment() {
     private lateinit var mAdapter: CitiesAdapter
     private lateinit var recycler: RecyclerView
     private lateinit var itemSelector: Selector
-    private val model: ViewModel by activityViewModels()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

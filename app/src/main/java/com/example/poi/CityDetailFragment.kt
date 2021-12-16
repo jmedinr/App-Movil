@@ -14,7 +14,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.poi.R
-import com.example.poi.viewmodel.ViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,7 +31,6 @@ class CityDetailFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var param3: String? = null
-    private val model: ViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,8 +62,6 @@ class CityDetailFragment : Fragment() {
 
         val imageView1 = view.findViewById<ImageView>(R.id.imageView)
         Glide.with(view).load(param3).into(imageView1)
-
-        model.selected.observe(viewLifecycleOwner, Observer<ClipData.Item>{})
     }
 
     companion object {
