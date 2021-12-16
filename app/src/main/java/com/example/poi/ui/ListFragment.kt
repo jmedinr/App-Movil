@@ -1,8 +1,10 @@
 package com.example.poi.ui
+import android.content.ClipData
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -10,17 +12,22 @@ import com.example.poi.R
 import com.example.poi.adapter.CitiesAdapter
 import com.example.poi.api.ApiClient
 import com.example.poi.models.Cities
+import com.example.poi.viewmodel.ViewModel
 import org.json.JSONArray
 import org.json.JSONException
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.IOException
+import java.nio.channels.Selector
 
 class ListFragment : Fragment() {
     private lateinit var mCities: MutableList<Cities>
     private lateinit var mAdapter: CitiesAdapter
     private lateinit var recycler: RecyclerView
+    private lateinit var itemSelector: Selector
+    private val model: ViewModel by activityViewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +47,7 @@ class ListFragment : Fragment() {
 
         recycler = view.findViewById(R.id.lstcities)
         setupRecyclerView()
+       itemSelector.
     }
 
     private fun setupRecyclerView() {
