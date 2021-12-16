@@ -47,7 +47,6 @@ class ListFragment : Fragment() {
 
         recycler = view.findViewById(R.id.lstcities)
         setupRecyclerView()
-       itemSelector.
     }
 
     private fun setupRecyclerView() {
