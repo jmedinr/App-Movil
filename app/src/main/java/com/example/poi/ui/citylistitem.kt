@@ -1,11 +1,12 @@
-package com.example.poi
+package com.example.poi.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.poi.R
 
-class ListCities : AppCompatActivity() {
+class Citylistitem : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list_cities)
+        setContentView(R.layout.activity_citylistitem)
     }
 }

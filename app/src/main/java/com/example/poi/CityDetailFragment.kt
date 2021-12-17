@@ -1,13 +1,20 @@
 package com.example.poi
 
+import android.content.ClipData
 import android.os.Bundle
+import android.service.autofill.OnClickAction
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.ListFragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.example.poi.R
+import com.example.poi.viewmodel.ViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +32,7 @@ class CityDetailFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var param3: String? = null
+    private val model: ViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +64,8 @@ class CityDetailFragment : Fragment() {
 
         val imageView1 = view.findViewById<ImageView>(R.id.imageView)
         Glide.with(view).load(param3).into(imageView1)
+
+        model.selected.observe(viewLifecycleOwner, Observer<ClipData.Item>{})
     }
 
     companion object {
