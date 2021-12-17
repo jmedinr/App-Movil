@@ -1,19 +1,13 @@
 package com.example.poi
 
-import android.content.ClipData
 import android.os.Bundle
-import android.service.autofill.OnClickAction
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.ListFragment
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
-import com.example.poi.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

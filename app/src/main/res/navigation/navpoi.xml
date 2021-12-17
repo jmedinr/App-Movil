@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.poi.ui.ListFragment"
+        android:name="com.example.poi.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
         <action
@@ -24,6 +24,6 @@
         tools:layout="@layout/fragment_city_detail" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.poi.ui.SettingsFragment"
+        android:name="com.example.poi.SettingsFragment"
         android:label="SettingsFragment" />
 </navigation>

@@ -1,0 +1,31 @@
+{
+  "citys": [
+  {
+    "title": "Medellin",
+    "description": "Medellín está ubicada en el noroccidente de Colombia sobre la coordillera central con una altitud media de 1495 m.s.n.m. Ubicada en el Valle del Aburrá, está rodeada de montañas y es conocida como la “Ciudad de la eterna primavera” por su clima que, durante todo el año, promedia los 24°C. Algunos de los sitios  recomendados son: Plaza Botero, Parque Explora, Parque de los Pies Descalzos, Parque Arví y el Metro.",
+    "punctuation": "Puntuación: 4.6",
+    "photoURL": "https://previews.123rf.com/images/dvrcan/dvrcan1706/dvrcan170600264/80007765-aerial-view-of-medellin-city-colombia.jpg"
+  },
+  {
+    "title": "Barranquilla",
+    "description": "Barranquilla, también conocida como la 'Arenosa' o 'Curramba la Bella', es una de las principales ciudades de Colombia y un destino turístico de referencia para locales y extranjeros. Esta ciudad, donde el río Magdalena termina su largo recorrido, es cuna de grandes músicos, literatos y pintores. La temperatura promedio en Barranquilla es de 24°C a 33°C. Algunos de los sitios recomendados son: Museo del Caribe, Antiguo Edificio de la Aduana, Catedral Metropolitana María Reina, Zoológico de Barranquilla y Gran Malecón del Río",
+    "punctuation": "Puntuación: 4.6",
+    "photoURL": "https://media.istockphoto.com/photos/barranquilla-view-picture-id123048785?k=20&m=123048785&s=612x612&w=0&h=7sN-QjAp3gm_4eF2dvQvMh6hrkEA_5iZ3SbrrJ0uHcQ="
+  },
+  {
+    "title": "Riohacha",
+    "description": "Riohacha, oficialmente Distrito Especial, Turístico y Cultural de Riohacha, (en wayuunaiki: Süchiimma que traduce a \"Tierra del Río\") es un municipio colombiano, capital del departamento de La Guajira. Se ubica en la costa del mar Caribe, en el delta del río Ranchería. La temperatura promedio en Rioacha es de 24°C a 35°C. Los sitios recomendados de esta ciudad son: Camellon de Riohacha, Playas de Mayapo, Catedral Nuestra Senora de los Remedios,  El Mercado Nuevo, Muelle de Rioacha y la Plaza Padilla",
+    "punctuation": "Puntuación: 4.5",
+    "photoURL": "https://media.istockphoto.com/photos/riohacha-guajira-picture-id1283967127?k=20&m=1283967127&s=612x612&w=0&h=WUTKmeBrkknleO4x2iWsgiYyxZbN672krECLREXfkl4="
+  },
+  {
+    "title": "Bogotá",
+    "description": "Bogotá, oficialmente Bogotá, Distrito Capital (antiguamente, Santafé de Bogotá), es la capital de la República de Colombia y del departamento de Cundinamarca. Está administrada como distrito capital, y goza de autonomía para la gestión de sus intereses dentro de los límites de la Constitución y la ley. La temperatura promedio en Bogotá es de 12°C. Los sitios recomendados en Bogotá son: Cerro de Monserrate, La Candelaria, Museo del Oro,Callejón del Embudo y la Plaza de Bolívar",
+    "punctuation": "Puntuación: 4.5",
+    "photoURL": "https://media.istockphoto.com/photos/sky-over-bogot-picture-id1087343640?k=20&m=1087343640&s=612x612&w=0&h=ETo4gPP1R-TkvxgerNuWi5fF8z4S1hMdTzAcQDlpFuc="
+  }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
