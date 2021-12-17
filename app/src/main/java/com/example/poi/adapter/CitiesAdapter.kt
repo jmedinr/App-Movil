@@ -1,6 +1,8 @@
 package com.example.poi.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +37,7 @@ class CitiesAdapter(
         private var descLabel: TextView = itemView.findViewById(R.id.citydesc)
         private var pointsLabel: TextView = itemView.findViewById(R.id.citypoints)
         private var imageView: ImageView = itemView.findViewById(R.id.imagecity)
+        private var location: ImageView = itemView.findViewById(R.id.iv_location)
         private var currentCity: Cities? = null
 
         init {
@@ -55,6 +58,15 @@ class CitiesAdapter(
             Glide.with(context)
                 .load(city.photoURL)
                 .into(imageView)
+
+            location.setOnClickListener{searchLocation()}
+
+        }
+        fun searchLocation() {
+            val queryUrl: Uri = Uri.parse("geo:0,0?q=${currentCity?.title}")
+            val mapIntent = Intent(Intent.ACTION_VIEW, queryUrl)
+            mapIntent.setPackage("com.google.android.apps.maps")
+            context.startActivity(mapIntent)
         }
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".Citylistitem">
+    tools:context=".ui.Citylistitem">
 
     <ImageView
         android:id="@+id/imagecity"
@@ -47,6 +47,16 @@
         app:layout_constraintLeft_toRightOf="@+id/imagecity"
         app:layout_constraintTop_toBottomOf="@+id/cityname"
         tools:text="Descripción de la ciudad" />
+
+    <ImageView
+        android:id="@+id/iv_location"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="324dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_google_maps"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/citypoints"
